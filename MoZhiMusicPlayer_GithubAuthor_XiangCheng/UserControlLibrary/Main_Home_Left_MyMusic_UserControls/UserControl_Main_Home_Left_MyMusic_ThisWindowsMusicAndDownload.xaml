@@ -202,7 +202,7 @@
                     <GridView>
                         <GridView.Columns>
                             <!--设置行高-->
-                            <GridViewColumn Width="0">
+                            <GridViewColumn Width="30">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <Image Height="50"/>
@@ -220,14 +220,14 @@
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
-                            <GridViewColumn x:Name="GridViewColumn_Love_Add_ListView_Song_Normal">
+                            <GridViewColumn x:Name="GridViewColumn_Love_Add_ListView_Song_Normal" Width="0" >
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button x:Name="Love_ListView_Song" Background="{Binding Song_Like_Image}" 
                                             Tag="{Binding Song_No}" MinHeight="{Binding Song_Like}"  
                                             Click="Love_ListView_Song_Click" 
                                             Style="{StaticResource MyButton}" 
-                                            Width="18" Height="18" FontSize="5">
+                                            Width="0" Height="18" FontSize="5">
                                             <Button.Effect>
                                                 <DropShadowEffect Color="#CECECE" BlurRadius="4" ShadowDepth="1" Opacity="1" />
                                             </Button.Effect>

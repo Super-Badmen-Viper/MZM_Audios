@@ -24,7 +24,7 @@
                 <DropShadowEffect Color="#CECECE" BlurRadius="1" ShadowDepth="1" Opacity="1" />
             </TextBlock.Effect>
         </TextBlock>
-        <TextBlock Margin="40,5,0,5" Text="同步数据库" Foreground="White" FontSize="13.5" Padding="0,1,0,0" 
+        <TextBlock Margin="40,5,0,5" Text="音频下载" Foreground="White" FontSize="13.5" Padding="0,1,0,0" 
                    UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"  
                    >
             <TextBlock.Effect>

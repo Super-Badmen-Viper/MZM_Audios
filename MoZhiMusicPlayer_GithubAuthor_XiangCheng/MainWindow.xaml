@@ -17,7 +17,8 @@
         xmlns:MusicPlayer_MV_Player="clr-namespace:MoZhiMusicPlayer_GithubAuthor_XiangCheng.UserControlLibrary.MusicPlayer_MV_Player" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:MainWindow_Left_MoZhiAI_Music_UserControls="clr-namespace:MoZhiMusicPlayer_GithubAuthor_XiangCheng.UserControlLibrary.MainWindow_Left_MoZhiAI_Music_UserControls"
-        xmlns:Windows_Song_Finds="clr-namespace:MoZhiMusicPlayer_GithubAuthor_XiangCheng.UserControlLibrary.Windows_Song_Finds"
+        xmlns:Main_UserControls="clr-namespace:MoZhiMusicPlayer_GithubAuthor_XiangCheng.UserControlLibrary.Main_UserControls"
+        
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         x:Class="MoZhiMusicPlayer_GithubAuthor_XiangCheng.MainWindow"
         
@@ -41,21 +42,18 @@
 
         <Grid>
             <Grid x:Name="Frame_Manager_ButtonList" 
-               HorizontalAlignment="Left" VerticalAlignment="Top"
+               HorizontalAlignment="Left" VerticalAlignment="Stretch"
                Width="210" Background="#171718"
                UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"  
                >
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                    <Grid Height="800">
+                    <Grid>
                         <Grid x:Name="Grid_Logo" Margin="0,0,0,630" VerticalAlignment="Top" Height="54">
                             <TextBlock Margin="40,13,20,0"  VerticalAlignment="Top" Height="28"
                                     FontWeight="Bold" FontSize="20" Foreground="White"
                                     Text="麻爪爪"
                                     UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" 
                                     >
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="1" Opacity="1" />
-                                </TextBlock.Effect>
                             </TextBlock>
                             <Border Background="#FF888888" VerticalAlignment="Top" Margin="40,52,20,0" Height="1"/>
                         </Grid>
@@ -63,9 +61,6 @@
                                  Margin="0,640,0,0" Visibility="Collapsed" VerticalAlignment="Top" Height="150" HorizontalAlignment="Center" Width="210">
                             <TextBlock Text="在线音乐  (需要服务器API)" Width="170" Padding="17,0,0,0" Foreground="White" Margin="10,0,0,0"
                                     >
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="1" Opacity="1" />
-                                </TextBlock.Effect>
                             </TextBlock>
                             <MainWindow_Left_OnlineMusic_UserControls:UserControl_ButtonFrame_Search_Song
                              x:Name="userControl_ButtonFrame_Search_Song"
@@ -90,9 +85,6 @@
                              Visibility="Collapsed" Width="210" Height="190" 
                              VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,420,0,80">
                             <TextBlock Text="AI + 音乐  (MoZhi自主研发)" Width="170" Padding="17,0,0,0" Foreground="White" Margin="10,0,0,0">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="1" Opacity="1" />
-                                </TextBlock.Effect>
                             </TextBlock>
                             <MainWindow_Left_MoZhiAI_Music_UserControls:UserControl_ButtonFrame_MusicSingIt
                              x:Name="userControl_ButtonFrame_MusicSingIt"
@@ -116,10 +108,8 @@
                         </StackPanel>
                         <StackPanel x:Name="StackPanel_My_Music" Width="210" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,76,0,0" >
                             <TextBlock Text="我的音乐" Width="160" Padding="17,0,0,0" Foreground="White"
+                                       Visibility="Collapsed"
                                     >
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="1" Opacity="1" />
-                                </TextBlock.Effect>
                             </TextBlock>
                             <MainWindow_Left_MyMusic_UserControls:UserControl_ButtonFrame_MusicLove
                              x:Name="userControl_ButtonFrame_MusicLove" Visibility="Collapsed"
@@ -128,7 +118,7 @@
                              MouseLeftButtonDown="UserControl_ButtonFrame_MusicLove_MouseLeftButtonDown" />
                             <MainWindow_Left_MyMusic_UserControls:UserControl_ButtonFrame_ThisWindowsMusicAndDownload 
                              x:Name="userControl_ButtonFrame_ThisWindowsMusicAndDownload"
-                             Width="160" Height="30" Margin="0,10,0,0"
+                             Width="160" Height="30" Margin="0,10,0,0" Visibility="Collapsed"
                              UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"  
                              MouseLeftButtonDown="UserControl_ButtonFrame_ThisWindowsMusicAndDownload_MouseLeftButtonDown" />
                             <MainWindow_Left_MyMusic_UserControls:UserControl_ButtonFrame_MusicRecentlyPlayed 
@@ -165,9 +155,6 @@
                         <TextBlock Text="音乐资源" Visibility="Collapsed"
                             Width="160" Padding="17,0,0,0"  Margin="-2,285,0,0"
                             Foreground="White" VerticalAlignment="Top">
-                            <TextBlock.Effect>
-                                <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="1" Opacity="1" />
-                            </TextBlock.Effect>
                         </TextBlock>
                         <MainWindow_Left_MyMusic_UserControls:UserControl_ButtonFrame_Edit_SongInfo
                          x:Name="Button_Edit_ALL_SongInfo" 
@@ -182,37 +169,37 @@
 
                         <Button 
                          x:Name="Button_3"
-                         Width="160" Height="30" VerticalAlignment="Top"
-                         Margin="0,150,0,0"
+                         Height="30" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                         Margin="40,80,20,0"
                          Content="日常-西南" Click="Button_3_Click"
                          />
                         <Button 
                          x:Name="Button_4"
-                         Width="160" Height="30" VerticalAlignment="Top"
-                         Margin="0,200,0,0"
+                         Height="30" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                         Margin="40,130,20,0"
                          Content="日常-广东" Click="Button_4_Click"/>
                         <Button 
                          x:Name="Button_5"
-                         Width="160" Height="30" VerticalAlignment="Top"
-                         Margin="0,250,0,0"
+                         Height="30" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                         Margin="40,180,20,0"
                          Content="开业" Click="Button_5_Click"/>
                         <Button 
                          x:Name="Button_6"
-                         Width="160" Height="30" VerticalAlignment="Top"
-                         Margin="0,300,0,0"
+                         Height="30" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                         Margin="40,230,20,0"
                          Content="周年庆" Click="Button_6_Click"/>
                         <Button 
                          x:Name="Button_7"
-                         Width="160" Height="30" VerticalAlignment="Top"
-                         Margin="0,350,0,0"
+                         Height="30" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                         Margin="40,280,20,0"
                          Content="活动" Click="Button_7_Click"/>
 
                         <MainWindow_Left_MyMusic_UserControls:UserControl_ButtonFrame_Load_UserData
                          x:Name="Button_Load_UserData" 
-                         Width="160" Height="30" 
+                         Height="30"  HorizontalAlignment="Stretch"
                          UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"  
-                         VerticalAlignment="Top" HorizontalAlignment="Center" 
-                         MouseLeftButtonDown="Button_Load_UserData_MouseLeftButtonDown" Margin="0,400,0,0"
+                         VerticalAlignment="Top" 
+                         MouseLeftButtonDown="Button_Load_UserData_MouseLeftButtonDown" Margin="40,330,20,0"
                  
                          />
                     </Grid>
@@ -356,6 +343,10 @@
              x:Name="userControl_SongList_Infos_Current_Playlist" HorizontalAlignment="Right"
              Margin="0,70,0,120"
              />
-
+        <Main_UserControls:UserControl_Download_Progress 
+            x:Name="userControl_Download_Progress"
+            HorizontalAlignment="Center" VerticalAlignment="Center" Width="1040" Height="130"
+            Visibility="Collapsed"
+            />
     </Grid>
 </Window>

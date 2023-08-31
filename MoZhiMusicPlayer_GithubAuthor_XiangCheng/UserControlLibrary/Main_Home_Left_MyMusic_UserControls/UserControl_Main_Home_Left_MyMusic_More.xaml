@@ -25,6 +25,7 @@
                 </TextBlock.Effect>
             </TextBlock>
             <TextBlock 
+                Visibility="Collapsed"
             x:Name="Recent_Song_Nums"
             Foreground="#1ECC94"
                    HorizontalAlignment="Left" Height="20" Text="歌曲0" TextWrapping="Wrap" 
@@ -37,6 +38,7 @@
                 </TextBlock.Effect>
             </TextBlock>
             <TextBlock 
+                Visibility="Collapsed"
                 x:Name="Recent_Video"
                 HorizontalAlignment="Left" Height="20" Text="视频0" TextWrapping="Wrap" 
                 VerticalAlignment="Top" Margin="150,74,0,0" FontSize="14"
@@ -50,6 +52,7 @@
             </TextBlock>
 
             <StackPanel
+                Visibility="Collapsed"
             HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="110" Margin="31,122,0,0"
             UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"  
             MouseLeftButtonDown="StackPanel_MouseLeftButtonDown"          
@@ -68,6 +71,7 @@
                        />
             </StackPanel>
             <StackPanel
+                Visibility="Collapsed"
             HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="32" Margin="273,122,0,0"
             UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"  
             MouseLeftButtonDown="StackPanel_MouseLeftButtonDown_1"
@@ -84,6 +88,7 @@
                />
             </StackPanel>
             <StackPanel x:Name="Stack_Button_LotSelects_Take" Height="32" VerticalAlignment="Top" 
+                        Visibility="Collapsed"
                         MouseEnter="Stack_Button_LotSelects_Take_MouseEnter" MouseLeave="Stack_Button_LotSelects_Take_MouseLeave" 
                         MouseLeftButtonDown="Stack_Button_LotSelects_Take_MouseLeftButtonDown" HorizontalAlignment="Left" 
                         Margin="150,122,0,0" Width="110"                       
@@ -101,7 +106,7 @@
         </Grid>
 
 
-        <Grid x:Name="Grid_ListItem_CrudModel_1" Margin="0,180,0,0">
+        <Grid x:Name="Grid_ListItem_CrudModel_1" Margin="0,100,0,0">
             <ListView x:Name="ListView_Download_SongList_Info" Foreground="White"
                 HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
                 UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"  
@@ -160,7 +165,7 @@
                     <GridView>
                         <GridView.Columns>
                             <!--设置行高-->
-                            <GridViewColumn Width="0">
+                            <GridViewColumn Width="30">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <Image Height="50"/>
@@ -178,14 +183,14 @@
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
-                            <GridViewColumn x:Name="GridViewColumn_Love_Add_ListView_Song_Normal">
+                            <GridViewColumn x:Name="GridViewColumn_Love_Add_ListView_Song_Normal" Width="0">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button x:Name="Love_ListView_Song" Background="{Binding Song_Like_Image}" 
                                             Tag="{Binding Song_No}" MinHeight="{Binding Song_Like}"  
                                             Click="Love_ListView_Song_Click" 
                                             Style="{StaticResource MyButton}" 
-                                            Width="18" Height="18" FontSize="5">
+                                            Width="0" Height="18" FontSize="5">
                                             <Button.Effect>
                                                 <DropShadowEffect Color="#CECECE" BlurRadius="4" ShadowDepth="1" Opacity="1" />
                                             </Button.Effect>
@@ -196,7 +201,7 @@
 
                             <GridViewColumn
                                         Header="歌曲" 
-                                        Width="360"                                         
+                                        Width="1360"                                         
                                         sort:GridViewSort.PropertyName="Song_Name" >
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
@@ -215,8 +220,7 @@
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
                             <GridViewColumn 
-                                        Header="歌手"
-                                        Width="160"
+                                        Width="0"
                                         sort:GridViewSort.PropertyName="Singer_Name">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
@@ -228,8 +232,8 @@
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Header="专辑"
-                                        Width="156"
+                            <GridViewColumn 
+                                        Width="0"
                                         sort:GridViewSort.PropertyName="Album_Name">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
@@ -242,8 +246,8 @@
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
-                            <GridViewColumn Header="No."
-                                        Width="120"
+                            <GridViewColumn 
+                                        Width="0"
                                         sort:GridViewSort.PropertyName="Song_No"
                                         >
                                 <GridViewColumn.CellTemplate>
@@ -257,8 +261,8 @@
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
-                            <GridViewColumn Header="歌曲路径"
-                                        Width="290"
+                            <GridViewColumn 
+                                        Width="0"
                                         sort:GridViewSort.PropertyName="Song_Url">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
